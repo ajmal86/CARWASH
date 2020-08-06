@@ -1,0 +1,40 @@
+<div
+  class="mdl-grid mdl-cell mdl-cell--9-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+  <div style="align-content: center;">
+<h4>History</h4>
+  </div>
+  <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone ">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp" style="width: 100%;">
+
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric" *ngFor="let item of tableHeader">{{ item }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data" [class.is-selected]="item.isSelected">
+          <td class="mdl-data-table__cell--non-numeric">{{ item.service }}</td>
+          <td class="mdl-data-table__cell--non-numeric">{{ item.car }}</td>
+
+          <td class="mdl-data-table__cell--non-numeric">{{ item.email }}</td>
+          <td class="mdl-data-table__cell--non-numeric">{{ item.time }}</td>
+
+          <td class="mdl-data-table__cell--non-numeric">
+            <span *ngFor="let resp of item.status"
+            class="label label--mini"
+            [ngClass]="resp.color">{{ resp.name }}</span>
+          </td>
+          <td>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-teal">Assign
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+</div>
+
+
+
+

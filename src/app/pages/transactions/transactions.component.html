@@ -1,0 +1,53 @@
+<div
+  class="mdl-grid mdl-cell mdl-cell--9-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+<h3>Transactions</h3>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="firstName" [(ngModel)]="particular" />
+    <label class="mdl-textfield__label" for="firstName">Particular</label>
+  </div>
+
+  <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="number" id="secondName" [(ngModel)]="amount" />
+    <label class="mdl-textfield__label" for="secondName">Amount</label>
+  </div>
+  <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <button (click)="addData()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-sea-blue" style="align-content: ju;">
+      Add
+    </button>
+  </div>
+</div>
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp" style="width: 100%;">
+
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric" *ngFor="let item of tableHeader">{{ item }}</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td class="mdl-data-table__cell--non-numeric">{{ item.particular }}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{ item.date }}</td>
+
+        <td *ngIf="item.amount<0" style="color: red;" class="mdl-data-table__cell--non-numeric">{{ item.amount }}</td>
+        <td *ngIf="item.amount>0" style="color: lightgreen;" class="mdl-data-table__cell--non-numeric">{{ item.amount }}</td>
+
+
+      </tr>
+    </tbody>
+  </table>
+  <div style="width: 100%;">
+    <h4 *ngIf="total<0" style="float: right; padding-right: 15%;color: red;">{{ total }}</h4>
+    <h4 *ngIf="total>0" style="float: right; padding-right: 15%;color: lightgreen;">{{ total }}</h4>
+  </div>
+</div>
+
+
+
+
+<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone ">
+
+</div>
+
+
